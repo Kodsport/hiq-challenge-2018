@@ -26,7 +26,6 @@ vector<vector<Ed>> eds;
 vector<bool> seenPos, seenWiz, res;
 
 void dfs(int at, bool cyclesOk, int start) {
-    cerr << "dfs at " << at << endl;
     if (sz(eds[at]) > 2 && !cyclesOk) return;
     seenPos[at] = true;
     vector<Ed> tr;
@@ -34,11 +33,10 @@ void dfs(int at, bool cyclesOk, int start) {
         if (seenWiz[it.label]) continue;
         if (it.to != start && seenPos[it.to]) continue;
         tr.push_back(it);
-    }
-    assert(sz(tr) <= 2);
-    if (sz(tr) == 2) {
-        if (tr[1] < tr[0]) swap(tr[1], tr[0]);
-        tr.pop_back();
+        if (sz(tr) == 2) {
+            if (tr[1] < tr[0]) swap(tr[1], tr[0]);
+            tr.pop_back();
+        }
     }
     if (!tr.empty()) {
         Ed it = tr[0];
