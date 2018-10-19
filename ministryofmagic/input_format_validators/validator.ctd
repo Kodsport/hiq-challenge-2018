@@ -1,0 +1,14 @@
+INT(1, 10000, c) SPACE INT(1, 100, p) NEWLINE
+REP(p)
+    INT(1, 1000000)
+    SET(r[0] = 0)
+    REPI(i, c)
+        SPACE
+        INT(1, c, x)
+        ASSERT(!INARRAY(x, r))
+        SET(r[i] = x)
+    END
+    UNSET(r)
+    NEWLINE
+END
+EOF
