@@ -24,10 +24,11 @@ They want the absolute difference between the sum of the value of all candy each
 Note that each candy must be given to one of the siblings: they can't throw any candy away.
 
 \section*{Input}
-The first line of the input contains a single integer $N$ ($1 \le N \le 1\,000$), the number of candies the siblings have collected.
-The next line contains the $N$ integers $a_1, a_2 \dots, a_N$ ($-1\,000 \le a_i \le 1\,000$).
-The third and final line contains the $N$ integers $b_1, b_2 \dots, b_N$ ($-1\,000 \le b_i \le 1\,000$).
+The first line of the input contains a single integer $N$ ($1 \le N \le 100$), the number of candies the siblings have collected.
+The next line contains the $N$ integers $a_1, a_2 \dots, a_N$ ($-100 \le a_i \le 100$).
+The third and final line contains the $N$ integers $b_1, b_2 \dots, b_N$ ($-100 \le b_i \le 100$).
 
 \section*{Output}
 Output a string containing $N$ characters.
 The $i$'th character should be \texttt{A} if the candy should be given to Alf, and \texttt{B} if it should be given to Beata.
+If there are multiple solutions, output the \emph{lexicographically smallest} one.

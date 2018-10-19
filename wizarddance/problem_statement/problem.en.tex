@@ -8,7 +8,7 @@ A \emph{caller} then gives a series of moves that the dancers should perform, mo
 
 American wizards, however, find square dancing a bit simplistic.
 Instead, they have come up with a kind of dance called \emph{circle dancing}.
-In the dance, $N$ wizards stand in a circle.
+In the dance, $N$ wizards stand in a circle numbered $1$ through $N$ clockwise.
 A caller then gives a series of moves that the dancers should perform, moving around on the floor.
 Each such move has the following form.
 Every wizard is given a number $p_i$.
@@ -28,3 +28,4 @@ The wizards are numbered $1, 2, \dots N$ clockwise in the circle.
 Output a string with $N$ characters.
 The $i$'th character should be \texttt{L} if the $i$'th wizards should teleport clockwise, and \texttt{R} if she should teleport counterclockwise.
 If there are multiple valid solutions, output the \emph{lexicographically smallest one}.
+If there is no valid solution, output \texttt{no dance}.
