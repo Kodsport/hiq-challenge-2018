@@ -26,7 +26,7 @@ int main() {
     vector<vector<bool>> reach(N+1, vector<bool>(2 * MX + 1, false));
     reach[0][MX] = true;
     rep(i,0,N) {
-        rep(j,0,2*MX+1) {
+        rep(j,0,MX+1) {
             if (reach[i][j]) {
                 reach[i+1][j + A[i]] =
                     reach[i+1][j - B[i]] = true;
@@ -48,11 +48,11 @@ int main() {
         int start = s;
         string res;
         rep(i,0,N) {
-            if (start - A[N - i - 1] >= 0 && reach[N - i - 1][start - A[N - i - 1]]) {
+            if (reach[N - i - 1][start - A[N - i - 1]]) {
                 res += 'A';
                 start -= A[N - i - 1];
             }
-            else if (start + B[N - i - 1] < 2*MX + 1 && reach[N - i - 1][start + B[N - i - 1]]) {
+            else if (reach[N - i - 1][start + B[N - i - 1]]) {
                 res += 'B';
                 start += B[N - i - 1];
             }

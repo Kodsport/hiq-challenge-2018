@@ -9,7 +9,7 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
-int MX = 100 * 100;
+int MX = 100 * 50;
 
 int main() {
 	cin.sync_with_stdio(0); cin.tie(0);
@@ -28,7 +28,9 @@ int main() {
     rep(i,0,N) {
         rep(j,0,2*MX+1) {
             if (reach[i][j]) {
-                reach[i+1][j + A[i]] =
+                if (j + A[i] < 2 * MX + 1)
+                    reach[i+1][j + A[i]] = true;
+                if (j - B[i] >= 0)
                     reach[i+1][j - B[i]] = true;
             }
         }
@@ -48,11 +50,11 @@ int main() {
         int start = s;
         string res;
         rep(i,0,N) {
-            if (start - A[N - i - 1] >= 0 && reach[N - i - 1][start - A[N - i - 1]]) {
+            if (reach[N - i - 1][start - A[N - i - 1]]) {
                 res += 'A';
                 start -= A[N - i - 1];
             }
-            else if (start + B[N - i - 1] < 2*MX + 1 && reach[N - i - 1][start + B[N - i - 1]]) {
+            else if (reach[N - i - 1][start + B[N - i - 1]]) {
                 res += 'B';
                 start += B[N - i - 1];
             }

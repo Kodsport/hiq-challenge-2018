@@ -36,7 +36,7 @@ int main() {
     vector<int> starts;
     rep(i,0,MX+1) {
         if (reach[N][MX + i]) {
-            starts.push_back(MX + i);
+            //starts.push_back(MX + i);
         }
         if (reach[N][MX - i]) {
             starts.push_back(MX - i);
@@ -48,11 +48,11 @@ int main() {
         int start = s;
         string res;
         rep(i,0,N) {
-            if (start - A[N - i - 1] >= 0 && reach[N - i - 1][start - A[N - i - 1]]) {
+            if (reach[N - i - 1][start - A[N - i - 1]]) {
                 res += 'A';
                 start -= A[N - i - 1];
             }
-            else if (start + B[N - i - 1] < 2*MX + 1 && reach[N - i - 1][start + B[N - i - 1]]) {
+            else if (reach[N - i - 1][start + B[N - i - 1]]) {
                 res += 'B';
                 start += B[N - i - 1];
             }
