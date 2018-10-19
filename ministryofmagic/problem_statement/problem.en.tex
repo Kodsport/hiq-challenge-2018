@@ -1,0 +1,34 @@
+\problemname{Ministry of Magic}
+As you may know, many countries have a system of government where the parliment chooses the prime minister, who then forms a government.
+Generally, the parliment needs to elect the prime minister by majority vote.
+Since no single party generally get a majority in parliment, parties have to form a coalition that gets a majority vote.
+As a result, some countries have went by without a government for years during negotiations!
+
+In the wizarding world, one quite early came to the conclusion that lacking a government for years is not sustainable.
+Dark wizards could easily use the lack of government to take over the wizarding world without anyone to fight back.
+Thus, election of minister of magic was early on decided to guarantee that an election completed as soon as everyone cast their votes.
+The system they use for this is called \emph{instant-runoff voting}.
+
+In instant-runoff voting, $C$ candidates compete against each other in up to $C - 1$ rounds.
+After each round, if one of the candidates get a majority vote, that candidate is elected.
+Otherwise, the least popular candidate is eliminated.
+If two candidates both are equally unpopular, the lowest numbered one is eliminated.
+Here, a majority vote requires a \emph{strict} majority, i.e. more than half of the votes.
+
+Votes for all the rounds are specified before the first ronud by giving a ranking of all the $C$ candidates.
+Given such a ranking, a voter will vote for the highest ranked candidate in their ranking that haven't been eliminated.
+For example, if a voter has the ranking $4, 1, 2, 3, 5$ and the candidates $1, 4, 5$ have been eliminated, the voter will vote for candidate $2$ in the next round.
+
+Just as in the normal world, the wizarding world have a number of parties (more specifically $P$ parties).
+Each party have a number of representatives in the parltiment that chooses the minister.
+You will be given the candidate rankings for each party.
+Can you determine who will win the election?
+
+\section*{Input}
+The first line contains two integers -- the number of candidates $1 \le C \le 1000$ and parties $1 \le P \le 1000$.
+The next $P$ lines describes each party.
+Each line starts with an integer $v$ ($1 \le v \le 10^6$), the number of votes that the party have in parliment, followed by a permutation of the numbers $1, 2, \dots C$, party's ranking of the candidates.
+The ranking is given from most preferred candidate to least preferred candidate.
+
+\section*{Output}
+Output a single integer, the number of the candidate that is elected.
