@@ -4,33 +4,32 @@
 \noindent
 Many countries have a system of government where the parliament chooses the prime minister, who then forms a government.
 Generally, the parliament needs to elect the prime minister by majority vote.
-When no single party manage to get a majority in parliament, parties have to form a coalition that gets a majority vote.
-As a result, some countries have went by without a government for years during negotiations!
+When no single party manages to get a majority in parliament, parties have to form a coalition that gets a majority vote.
+As a result, some countries have been without a government for years during negotiations!
 
-In the wizarding world, one quite early came to the conclusion that lacking a government for years is not sustainable.
-Dark wizards could easily use the lack of government to take over the wizarding world without anyone to fight back.
-Thus, election of minister of magic was early on decided to guarantee that an election completed as soon as everyone cast their votes.
+The wizarding world realized that lacking a government for years is not sustainable because dark wizards could easily use the lack of government to take over the wizarding world without anyone fighting back.
+Thus it was decided that the minister of magic would be determined automatically as soon as everyone has cast their votes.
 The system they use for this is called \emph{instant-runoff voting}.
 
 In instant-runoff voting, $C$ candidates compete against each other in up to $C - 1$ rounds.
-After each round, if one of the candidates get a majority vote, that candidate is elected.
+After each round, if one of the candidates gets a majority vote, that candidate is elected.
 Otherwise, the least popular candidate is eliminated.
 If two candidates both are equally unpopular, the lowest numbered one is eliminated.
 Here, a majority vote requires a \emph{strict} majority, i.e. more than half of the votes.
 
 Votes for all the rounds are specified before the first round by giving a ranking of all the $C$ candidates.
-Given such a ranking, a voter will vote for the highest ranked candidate in their ranking that haven't been eliminated.
+Given such a ranking, a voter will vote for the highest ranked candidate in their ranking that hasn't been eliminated.
 For example, if a voter has the ranking $4, 1, 2, 3, 5$ and the candidates $1, 4, 5$ have been eliminated, the voter will vote for candidate $2$ in the next round.
 
-Just as in the normal world, the wizarding world have a number of parties (more specifically $P$ parties).
-Each party have a number of representatives in the parliament that chooses the minister.
+Just as in the normal world, the wizarding world has a number of parties (more specifically $P$ parties).
+Each party has a number of representatives in the parliament that choose the minister.
 You will be given the candidate rankings for each party.
 Can you determine who will win the election?
 
 \section*{Input}
 The first line contains two integers -- the number of candidates $C$ ($1 \le C \le 10\,000$) and parties $P$ ($1 \le P \le 100$).
-The next $P$ lines describes each party.
-Each line starts with an integer $v$ ($1 \le v \le 10^6$), the number of votes that the party have in parliament, followed by a permutation of the numbers $1, 2, \dots C$, the party's ranking of the candidates.
+The next $P$ lines describe each party.
+Each line starts with an integer $v$ ($1 \le v \le 10^6$), the number of votes that the party has in the parliament, followed by a permutation of the numbers $1, 2, \dots C$, the party's ranking of the candidates.
 The ranking is given from most preferred candidate to least preferred candidate.
 
 \section*{Output}
