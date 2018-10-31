@@ -24,9 +24,10 @@ struct Ed {
 
 vector<vector<Ed>> eds;
 vector<bool> seenPos, seenWiz, res;
+vi degs;
 
 void dfs(int at, bool cyclesOk, int start) {
-    if (sz(eds[at]) > 2 && !cyclesOk) return;
+    if (degs[at] > 2 && !cyclesOk) return;
     seenPos[at] = true;
     vector<Ed> tr;
     trav(it, eds[at]) {
@@ -43,6 +44,8 @@ void dfs(int at, bool cyclesOk, int start) {
         seenWiz[it.label] = true;
         res[it.label] = it.left;
         dfs(it.to, cyclesOk, start);
+        degs[at]--;
+        degs[it.to]--;
     }
 }
 
@@ -56,6 +59,7 @@ int main() {
     seenWiz.resize(N);
     res.resize(N);
     eds.resize(N);
+    degs.resize(N);
     vector<int> poses;
     rep(i,0,N) {
         int p;
@@ -64,6 +68,8 @@ int main() {
         int r = (i - p + N) % N;
         eds[l].emplace_back(i, r, true);
         eds[r].emplace_back(i, l, l == r);
+        degs[l]++;
+        degs[r]++;
         poses.push_back(l);
     }
 
@@ -74,7 +80,7 @@ int main() {
         }
     }
     rep(i,0,N) {
-        if (eds[i].size() == 1) {
+        if (degs[i] == 1) {
             dfs(i, false, -1);
         }
     }
