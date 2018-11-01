@@ -26,10 +26,18 @@ Each party has a number of representatives in the parliament that choose the min
 You will be given the candidate rankings for each party.
 Can you determine who will win the election?
 
+\section*{Explanation of Sample 1}
+The favourite candidate of the four parties are $1$, $4$, $1$ and $4$.
+Each party have a single vote, so candidates $1$ and $4$ get two votes each in the first round.
+In the first two rounds, this means candidates $2$ and $3$ have zero votes, so they will be eliminiated (first $2$ since it is the lower-numbered candidate).
+Finally, candidate $1$ is eliminated since candidates $1$ and $4$ are both equally unpopular with $2$ votes, but $1$ is the lower-numbered candidate.
+This means candidate $4$ wins.
+
+
 \section*{Input}
 The first line contains two integers -- the number of candidates $C$ ($1 \le C \le 10\,000$) and parties $P$ ($1 \le P \le 100$).
 The next $P$ lines describe each party.
-Each line starts with an integer $v$ ($1 \le v \le 10^6$), the number of votes that the party has in the parliament, followed by a permutation of the numbers $1, 2, \dots C$, the party's ranking of the candidates.
+Each line starts with an integer $v$ ($1 \le v \le 10^6$), the number of votes that the party has in the parliament, followed by a permutation of the numbers $1, 2, \dots, C$, the party's ranking of the candidates.
 The ranking is given from most preferred candidate to least preferred candidate.
 
 \section*{Output}
